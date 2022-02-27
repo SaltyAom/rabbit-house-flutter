@@ -29,7 +29,7 @@ class MenuPage extends HookWidget {
 
       try {
         final response = await Dio().get(
-          'https://is-the-order-a-rabbit-api.onrender.com',
+          'https://rabbit-house.saltyaom.com',
         );
 
         if (response.statusCode != 200) {
