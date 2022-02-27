@@ -52,7 +52,9 @@ class MenuPage extends HookWidget {
     if (success.value == null) {
       return const Center(
         child: CircularProgressIndicator(),
-      );
+      ).niku
+        ..w100
+        ..h100;
     }
 
     if (success.value == false) {
