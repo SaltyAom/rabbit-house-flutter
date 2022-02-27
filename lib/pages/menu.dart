@@ -8,7 +8,7 @@ import 'package:niku/namespace.dart' as n;
 
 import 'package:dio/dio.dart';
 import 'package:rabbit_house/components/language.dart';
-import 'package:rabbit_house/layous/layouts.dart';
+import 'package:rabbit_house/layouts/layouts.dart';
 
 import 'package:rabbit_house/pages/order.dart';
 import 'package:rabbit_house/components/menu_item.dart';
