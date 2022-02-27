@@ -21,8 +21,8 @@ class MenuLayout extends HookWidget {
       n.Text("Rabbit House")
         ..bold
         ..fontSize = 36,
-      n.TextFormField(null)
-        ..of(S.searchBox)
+      n.TextFormField()
+        ..of(S.searchBox(context))
         ..onChanged = (value) {
           search.value = value;
         },

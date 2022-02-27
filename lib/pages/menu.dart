@@ -69,7 +69,7 @@ class MenuPage extends HookWidget {
           ..onPressed = getRabbitHouse
           ..fontSize = 18
           ..w600
-          ..fg = Colors.white
+          ..color = Colors.white
           ..bg = Colors.blue
           ..splash = Colors.white.withOpacity(.1)
           ..px = 36
@@ -154,8 +154,13 @@ class MenuPage extends HookWidget {
                   title: rabbitHouse.value!.formatKey(type),
                   menus: rabbitHouse.value!.by(type)!,
                 )
-                ..color = Colors.black
-                ..splash = Colors.grey.shade200
+                ..useDarkMode(
+                  context,
+                  (v, isDark) => v
+                    ..color = isDark ? Colors.white : Colors.black
+                    ..splash =
+                        isDark ? Colors.grey.shade700 : Colors.grey.shade200,
+                )
                 ..px = 16
                 ..py = 12;
             }),

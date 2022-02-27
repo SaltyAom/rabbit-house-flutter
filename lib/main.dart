@@ -30,6 +30,10 @@ class RabbitHouseApp extends StatelessWidget {
       title: 'Rabbit House',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        backgroundColor: Colors.grey.shade100,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Colors.grey.shade100,
+        ),
         appBarTheme: const AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle.dark,
           centerTitle: false,
@@ -46,6 +50,22 @@ class RabbitHouseApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
+      darkTheme: ThemeData.dark().copyWith(
+        appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+          centerTitle: false,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          toolbarTextStyle: TextStyle(
+            color: Colors.blue,
+          ),
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 21,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
       home: const HomePage(),
     );
   }
@@ -53,8 +73,6 @@ class RabbitHouseApp extends StatelessWidget {
 
 class HomePage extends HookWidget {
   const HomePage({Key? key}) : super(key: key);
-
-  static final bg = [Colors.grey.shade100, Colors.grey.shade100];
 
   @override
   build(context) {
@@ -64,7 +82,6 @@ class HomePage extends HookWidget {
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
         currentIndex: tab.value,
-        backgroundColor: bg[tab.value],
         onTap: (index) {
           tab.value = index;
         },
@@ -79,7 +96,6 @@ class HomePage extends HookWidget {
           ),
         ],
       ),
-      backgroundColor: bg[tab.value],
       body: IndexedStack(
         index: tab.value,
         children: const [MenuPage(), SettingsPage()],

@@ -23,7 +23,6 @@ class OrderPage extends StatelessWidget {
   @override
   build(context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         titleSpacing: 8,
