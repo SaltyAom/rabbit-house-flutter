@@ -154,12 +154,14 @@ class MenuPage extends HookWidget {
                   title: rabbitHouse.value!.formatKey(type),
                   menus: rabbitHouse.value!.by(type)!,
                 )
-                ..useDarkMode(
+                ..useThemeSelector(
                   context,
-                  (v, isDark) => v
-                    ..color = isDark ? Colors.white : Colors.black
-                    ..splash =
-                        isDark ? Colors.grey.shade700 : Colors.grey.shade200,
+                  light: (v) => v
+                    ..color = Colors.black
+                    ..splash = Colors.grey.shade200,
+                  dark: (v) => v
+                    ..color = Colors.white
+                    ..splash = Colors.grey.shade700,
                 )
                 ..px = 16
                 ..py = 12;

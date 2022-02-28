@@ -20,17 +20,20 @@ class S {
     ..neverScroll
     ..p = 0
     ..useParent((v) => v
-      ..useDarkMode((v, isDarkMode) =>
-          v..bg = isDarkMode ? Colors.grey.shade800 : Colors.white)
+      ..useThemeSelector(
+        light: (v) => v..bg = Colors.white,
+        dark: (v) => v..bg = Colors.grey.shade800,
+      )
       ..rounded = 16);
 
   static searchBox(BuildContext context) => n.TextFormField.hint("Find a menu")
     ..textAlignVertical = TextAlignVertical.center
     ..borderColor = Colors.transparent
-    ..useDarkMode(
-        context,
-        (v, isDark) =>
-            v..bg = isDark ? Colors.grey.shade800 : Colors.grey.shade200)
+    ..useThemeSelector(
+      context,
+      light: (v) => v..bg = Colors.grey.shade200,
+      dark: (v) => v..bg = Colors.grey.shade800,
+    )
     ..contentPadding = n.EdgeInsets.all(0)
     ..prefixIcon = Icon(Icons.search, color: Colors.grey.shade500)
     ..px = 16

@@ -46,8 +46,10 @@ class SettingsPage extends HookConsumerWidget {
         ..w100
         ..px = 16
         ..useParent((v) => v
-          ..useDarkMode((v, isDark) =>
-              v..bg = isDark ? Colors.grey.shade800 : Colors.white)
+          ..useThemeSelector(
+            light: (v) => v..bg = Colors.white,
+            dark: (v) => v..bg = Colors.grey.shade800,
+          )
           ..rounded = 8),
     ])
       ..crossStart

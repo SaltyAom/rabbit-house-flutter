@@ -29,6 +29,7 @@ class RabbitHouseApp extends StatelessWidget {
     return MaterialApp(
       title: 'Rabbit House',
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
       theme: ThemeData(
         backgroundColor: Colors.grey.shade100,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
